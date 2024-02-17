@@ -1,3 +1,9 @@
+# OAK06 - Note
+
+Hello, I've created this repo as I've wanted to use the Laravel breeze / Next.js setup but using Typescript.
+The setup is the same as the original, but before running the Next.js app make sure to install the Typescript packages using `npm install`.
+Happy Coding :)
+
 # Laravel Breeze - Next.js Edition ▲
 
 ## Introduction
