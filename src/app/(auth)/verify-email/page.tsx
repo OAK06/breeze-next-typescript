@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
 
-const Page = () => {
+export default function Page() {
     const { logout, resendEmailVerification } = useAuth({
         middleware: 'auth',
         redirectIfAuthenticated: '/dashboard',
@@ -43,5 +43,3 @@ const Page = () => {
         </>
     )
 }
-
-export default Page

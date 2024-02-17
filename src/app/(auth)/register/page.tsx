@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
 
-const Page = () => {
+export default function Page() {
     const { register } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
@@ -18,7 +18,7 @@ const Page = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>({})
 
     const submitForm = event => {
         event.preventDefault()
@@ -119,5 +119,3 @@ const Page = () => {
         </form>
     )
 }
-
-export default Page

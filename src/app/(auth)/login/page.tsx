@@ -10,8 +10,8 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
 
-const Login = () => {
-    const router = useRouter()
+export default function Login() {
+    const router: any = useRouter()
 
     const { login } = useAuth({
         middleware: 'guest',
@@ -21,7 +21,7 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [shouldRemember, setShouldRemember] = useState(false)
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>({})
     const [status, setStatus] = useState(null)
 
     useEffect(() => {
@@ -119,5 +119,3 @@ const Login = () => {
         </>
     )
 }
-
-export default Login

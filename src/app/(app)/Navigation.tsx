@@ -7,10 +7,12 @@ import ResponsiveNavLink, {
 } from '@/components/ResponsiveNavLink'
 import { DropdownButton } from '@/components/DropdownLink'
 import { useAuth } from '@/hooks/auth'
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-const Navigation = ({ user }) => {
+export default function Navigation({ user }) {
+    const router: any = useRouter()
+
     const { logout } = useAuth()
 
     const [open, setOpen] = useState(false)
@@ -32,7 +34,7 @@ const Navigation = ({ user }) => {
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
                                 href="/dashboard"
-                                active={usePathname() === '/dashboard'}>
+                                active={router.pathname === '/dashboard'}>
                                 Dashboard
                             </NavLink>
                         </div>
@@ -107,7 +109,7 @@ const Navigation = ({ user }) => {
                     <div className="pt-2 pb-3 space-y-1">
                         <ResponsiveNavLink
                             href="/dashboard"
-                            active={usePathname() === '/dashboard'}>
+                            active={router.pathname === '/dashboard'}>
                             Dashboard
                         </ResponsiveNavLink>
                     </div>
@@ -153,5 +155,3 @@ const Navigation = ({ user }) => {
         </nav>
     )
 }
-
-export default Navigation

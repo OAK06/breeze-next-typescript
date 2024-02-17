@@ -8,14 +8,14 @@ import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
 
-const Page = () => {
+export default function Page() {
     const { forgotPassword } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
     })
 
     const [email, setEmail] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>({})
     const [status, setStatus] = useState(null)
 
     const submitForm = event => {
@@ -60,5 +60,3 @@ const Page = () => {
         </>
     )
 }
-
-export default Page

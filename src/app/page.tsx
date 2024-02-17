@@ -4,7 +4,7 @@ export const metadata = {
     title: 'Laravel',
 }
 
-const Home = () => {
+export default function Home() {
     return (
         <>
             <div className="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
@@ -265,5 +265,3 @@ const Home = () => {
         </>
     )
 }
-
-export default Home

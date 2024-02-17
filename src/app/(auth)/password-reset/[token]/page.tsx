@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
 
-const PasswordReset = () => {
+export default function PasswordReset() {
     const searchParams = useSearchParams()
 
     const { resetPassword } = useAuth({ middleware: 'guest' })
@@ -17,7 +17,7 @@ const PasswordReset = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    const [errors, setErrors] = useState([])
+    const [errors, setErrors] = useState<any>({})
     const [status, setStatus] = useState(null)
 
     const submitForm = event => {
@@ -107,5 +107,3 @@ const PasswordReset = () => {
         </>
     )
 }
-
-export default PasswordReset
